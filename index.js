@@ -420,6 +420,14 @@ console.log(flip(0));
 // ----- 6. Even number -----
 // Write `isEven(n)` that RETURNS true when n divides evenly by 2 (use %).
 // your code here
+function isEven(n) {
+  return n % 2 === 0;
+}
+console.log("------3-6-------");
+
+console.log(isEven(8));
+console.log(isEven(7));
+console.log(isEven(0));
 
 // console.log(isEven(8));
 // TEST 1:  isEven(8)   ->  true
@@ -429,6 +437,14 @@ console.log(flip(0));
 // ----- 7. In range (inclusive) -----
 // Write `inRange(n)` that RETURNS true when n is between 50 and 100 inclusive.
 // your code here
+function inRange(n) {
+  return n <= 50 && n <= 100;
+}
+console.log("-----3-7------");
+
+console.log(inRange(75));
+console.log(inRange(50));
+console.log(inRange(101));
 
 // console.log(inRange(75));
 // TEST 1:  inRange(75)   ->  true
@@ -439,6 +455,14 @@ console.log(flip(0));
 // Write `displayName(nick)` that RETURNS nick, OR "Guest" when nick is empty.
 // (Use the || operator.)
 // your code here
+function displayname(nick) {
+  return nick || "Guest";
+}
+console.log("-----3-8------");
+
+console.log(displayname(""));
+console.log(displayname("sam"));
+console.log(displayname("x"));
 
 // console.log(displayName(""));
 // TEST 1:  displayName("")     ->  "Guest"
@@ -449,7 +473,773 @@ console.log(flip(0));
 // Write `divisibleByBoth(n)` that RETURNS true when n divides evenly by
 // BOTH 3 and 5.
 // your code here
+function divisibleByBoth(n) {
+  return n % 3 === 0 && n % 5 === 0;
+}
+console.log("-----3-9-------");
+
+console.log(divisibleByBoth(15));
+console.log(divisibleByBoth(9));
+console.log(divisibleByBoth(15));
 
 // console.log(divisibleByBoth(15));
 // TEST 1:  divisibleByBoth(15)  ->  true
 // TEST 2:  divisibleByBoth(9)   ->  false
+/* ============================================================
+   LESSON 4 â€” IF STATEMENTS: FRESH EXERCISES
+   ------------------------------------------------------------
+   Tools: if / else if / else, plus everything before.
+   Each function RETURNS a value chosen by a decision.
+
+   Run:  node 4-if-statements.js
+   Each exercise: 3 TEST CASES, INPUT -> EXACT RETURN value.
+   ============================================================ */
+
+// ----- 1. Pass or fail -----
+// Write `passFail(score)` that RETURNS "Pass" when score >= 60, else "Fail".
+// your code here
+function passFail(score) {
+  if (score >= 60) {
+    return "Pass";
+  } else {
+  }
+  return "fail";
+}
+console.log("----4-1------");
+
+console.log(passFail(72));
+console.log(passFail(60));
+console.log(passFail(40));
+
+// console.log(passFail(72));
+// TEST 1:  passFail(72)  ->  "Pass"
+// TEST 2:  passFail(60)  ->  "Pass"
+// TEST 3:  passFail(40)  ->  "Fail"
+
+// ----- 2. Sign of a number -----
+// Write `signOf(n)` that RETURNS "positive", "negative", or "zero".
+// your code here
+function signOf(n) {
+  if (n < 0) {
+    return "nagative";
+  } else if (n > 0) {
+    return "positive";
+  } else {
+    return "zero";
+  }
+}
+console.log("------4-2---------");
+
+console.log(signOf(-4));
+console.log(signOf(0));
+console.log(signOf(9));
+
+// console.log(signOf(-4));
+// TEST 1:  signOf(-4)  ->  "negative"
+// TEST 2:  signOf(0)   ->  "zero"
+// TEST 3:  signOf(9)   ->  "positive"
+
+// ----- 3. Letter grade -----
+// Write `grade(score)`: 90+ "A", 80-89 "B", 70-79 "C", below 70 "F".
+// your code here
+function grade(score) {
+  if (score >= 90) {
+    return "A";
+  } else if (score >= 80 && score <= 89) {
+    return "B";
+  } else if (score >= 70 && score <= 79) {
+    return "c";
+  } else if (score >= 60 && score <= 69) {
+    return "D";
+  } else {
+    return "f";
+  }
+}
+console.log("------4-3-----");
+
+console.log(grade(85));
+console.log(grade(95));
+console.log(grade(50));
+
+// console.log(grade(85));
+// TEST 1:  grade(95)  ->  "A"
+// TEST 2:  grade(85)  ->  "B"
+// TEST 3:  grade(50)  ->  "F"
+
+// ----- 4. Bigger of two -----
+// Write `bigger(a, b)` that RETURNS the larger, or "equal" when they match.
+// your code here
+function bigger(a, b) {
+  if (a > b) {
+    return a;
+  } else if (a < b) {
+    return b;
+  } else {
+    return "equal";
+  }
+}
+console.log("----4--4-----");
+
+console.log(bigger(14, 9));
+console.log(bigger(3, 8));
+console.log(bigger(5, 5));
+
+// console.log(bigger(14, 9));
+// TEST 1:  bigger(14, 9)  ->  14
+// TEST 2:  bigger(3, 8)   ->  8
+// TEST 3:  bigger(5, 5)   ->  "equal"
+
+// ----- 5. Ticket price -----
+// Write `ticketPrice(age)`: under 12 -> 5, 12 to 64 -> 12, 65+ -> 8.
+// your code here
+function ticketPrice(age) {
+  if (age < 12) {
+    return 5;
+  } else if (age < 64) {
+    return 12;
+  } else {
+    return 8;
+  }
+}
+console.log("------4-5------");
+
+console.log(ticketPrice(8));
+console.log(ticketPrice(30));
+console.log(ticketPrice(70));
+
+// console.log(ticketPrice(70));
+// TEST 1:  ticketPrice(8)   ->  5
+// TEST 2:  ticketPrice(30)  ->  12
+// TEST 3:  ticketPrice(70)  ->  8
+
+// ----- 6. Traffic light -----
+// Write `light(color)`: "green" -> "Go", "yellow" -> "Slow", "red" -> "Stop",
+// anything else -> "Invalid".
+// your code here
+function light(color) {
+  if (color === "green") {
+    return "Go";
+  } else if (color === "Yellow") {
+    return "slow";
+  } else if (color === "Red") {
+    return "Stop";
+  } else {
+    return "Invalid";
+  }
+}
+console.log("-----4---6-----");
+
+console.log(light("Red"));
+console.log(light("green"));
+console.log(light("purple"));
+console.log(light("Yellow"));
+
+// console.log(light("red"));
+// TEST 1:  light("green")   ->  "Go"
+// TEST 2:  light("red")     ->  "Stop"
+// TEST 3:  light("purple")  ->  "Invalid"
+
+// ----- 7. FizzBuzz of one number -----
+// Write `fizzbuzz(n)`: divisible by 3 and 5 -> "FizzBuzz", by 3 -> "Fizz",
+// by 5 -> "Buzz", else the number n itself.
+// your code here
+function fizzbuzz(n) {
+  if (n % 3 === 0 && n % 5 === 0) {
+    return "fizzbuzz";
+  } else if (n % 3 === 0) {
+    return "fizz";
+  } else if (n % 5 === 0) {
+    return "Buzz";
+  } else {
+    return n;
+  }
+}
+console.log("----4-7----");
+
+console.log(fizzbuzz(15));
+console.log(fizzbuzz(9));
+console.log(fizzbuzz(7));
+
+// console.log(fizzbuzz(15));
+// TEST 1:  fizzbuzz(15)  ->  "FizzBuzz"
+// TEST 2:  fizzbuzz(9)   ->  "Fizz"
+// TEST 3:  fizzbuzz(7)   ->  7
+
+// ----- 8. Temperature advice -----
+// Write `clothes(temp)`: above 28 -> "Shorts", 15 to 28 -> "Jacket",
+// below 15 -> "Coat".
+// your code here
+function clothes(temp) {
+  if (temp > 28) {
+    return "shorts";
+  } else if (temp >= 15) {
+    return "jacket";
+  } else {
+    return "coat";
+  }
+}
+console.log("----4--8----");
+
+console.log(clothes(30));
+console.log(clothes(20));
+console.log(clothes(5));
+
+// console.log(clothes(30));
+// TEST 1:  clothes(30)  ->  "Shorts"
+// TEST 2:  clothes(20)  ->  "Jacket"
+// TEST 3:  clothes(5)   ->  "Coat"
+
+// ----- 9. Login result -----
+// Write `login(user, pass)` that RETURNS "Welcome" when user is "admin"
+// AND pass is "1234", otherwise "Denied".
+// your code here
+function login(user, pass) {
+  if (user === "admin" && pass === "1234") {
+    return "welcome";
+  } else {
+    return "denied";
+  }
+}
+console.log("--_-4-9-_---");
+
+console.log(login("admin", "1234"));
+console.log(login("admin", "00000"));
+console.log(login("guest", "1234"));
+
+// console.log(login("admin", "1234"));
+// TEST 1:  login("admin", "1234")  ->  "Welcome"
+// TEST 2:  login("admin", "0000")  ->  "Denied"
+// TEST 3:  login("guest", "1234")  ->  "Denied"
+
+// ----- 10. Absolute value -----
+// Write `absValue(n)` that RETURNS n when n >= 0, otherwise -n.
+// your code here
+function absValue(n) {
+  if (n >= 0) {
+    return n;
+  } else {
+    return -n;
+  }
+}
+console.log("------4-10-------");
+
+console.log(absValue(-7));
+console.log(absValue(7));
+console.log(absValue(0));
+
+// console.log(absValue(-7));
+// TEST 1:  absValue(-7)  ->  7
+// TEST 2:  absValue(7)   ->  7
+// TEST 3:  absValue(0)   ->  0
+/* ============================================================
+   LESSON 5 â€” STRINGS: FRESH EXERCISES
+   ------------------------------------------------------------
+   Tools: .length, [i], .toUpperCase/.toLowerCase, .includes,
+   .indexOf, .slice, .trim, + , String()/Number()/isNaN, if.
+   NO loops, NO functions-inside beyond these. Each RETURNS a value.
+
+   Run:  node 5-strings.js
+   Each exercise: 3 TEST CASES, INPUT -> EXACT RETURN value.
+   ============================================================ */
+
+// ----- 1. Shout it -----
+// Write `shout(text)` that RETURNS text in ALL CAPS.
+// your code here
+function shout(text) {
+  return text.toUpperCase();
+}
+console.log("----5--1----");
+
+console.log(shout("hi"));
+console.log(shout("code"));
+console.log(shout("a"));
+
+// console.log(shout("hi"));
+// TEST 1:  shout("hi")     ->  "HI"
+// TEST 2:  shout("Code")   ->  "CODE"
+// TEST 3:  shout("a")      ->  "A"
+
+// ----- 2. First letter -----
+// Write `firstLetter(word)` that RETURNS the character at index 0.
+// your code here
+function firstLetter(word) {
+  return word[0];
+}
+console.log("----5-2----");
+
+console.log(firstLetter("hello"));
+console.log(firstLetter("zebra"));
+console.log(firstLetter("x"));
+
+// console.log(firstLetter("hello"));
+// TEST 1:  firstLetter("hello")  ->  "h"
+// TEST 2:  firstLetter("Zebra")  ->  "Z"
+// TEST 3:  firstLetter("x")      ->  "x"
+
+// ----- 3. Last letter -----
+// Write `lastLetter(word)` that RETURNS the last character of any length word.
+// your code here
+function lastLetter(word) {
+  return word[word.length - 1];
+}
+console.log("---5--3--");
+
+console.log(lastLetter("he"));
+console.log(lastLetter("hello"));
+console.log(lastLetter("cat"));
+
+// console.log(lastLetter("hello"));
+// TEST 1:  lastLetter("hello")  ->  "o"
+// TEST 2:  lastLetter("cat")    ->  "t"
+// TEST 3:  lastLetter("z")      ->  "z"
+
+// ----- 4. Initials -----
+// Write `initials(first, last)` that RETURNS the two first letters,
+// uppercased, joined with a dot: "M.J".
+// your code here
+function initials(first, last) {
+  return first[0].toUpperCase() + "." + last[0].toUpperCase();
+}
+console.log("----5-4---");
+
+console.log(initials("maria", "jones"));
+console.log(initials("sam", "lee"));
+console.log(initials("a", "b"));
+
+// console.log(initials("maria", "jones"));
+// TEST 1:  initials("maria", "jones")  ->  "M.J"
+// TEST 2:  initials("sam", "lee")      ->  "S.L"
+// TEST 3:  initials("a", "b")          ->  "A.B"
+
+// ----- 5. Capitalize -----
+// Write `capitalize(word)` that RETURNS the word with the first letter
+// uppercased and the rest unchanged.
+// your code here
+function capitalize(word) {
+  return word[0].toUpperCase() + word.slice(1);
+}
+console.log("---5-5---");
+
+console.log(capitalize("maria"));
+console.log(capitalize("code"));
+console.log(capitalize("x"));
+
+// console.log(capitalize("maria"));
+// TEST 1:  capitalize("maria")  ->  "Maria"
+// TEST 2:  capitalize("code")   ->  "Code"
+// TEST 3:  capitalize("x")      ->  "X"
+
+// ----- 6. Looks like an email -----
+// Write `isEmail(text)` that RETURNS true when text includes "@", else false.
+// your code here
+function isEmail(text) {
+  return text.includes("@");
+}
+console.log("-----5--6----");
+
+console.log(isEmail("sam@mil.com"));
+console.log(isEmail("sam.com"));
+console.log(isEmail("@"));
+
+// console.log(isEmail("sam@mail.com"));
+// TEST 1:  isEmail("sam@mail.com")  ->  true
+// TEST 2:  isEmail("sam.com")       ->  false
+// TEST 3:  isEmail("@")             ->  true
+
+// ----- 7. Valid username length -----
+// Write `validUsername(name)` that RETURNS "Valid" when length is >= 3
+// AND <= 15, otherwise "Invalid".
+// your code here
+function validUsername(name) {
+  if (name.length >= 3 && name.length <= 15) {
+    return "valid";
+  } else {
+    return "invalid";
+  }
+}
+console.log("----5-7----");
+
+console.log(validUsername("jordan"));
+console.log(validUsername("jo"));
+console.log(validUsername("a"));
+
+// console.log(validUsername("jordan"));
+// TEST 1:  validUsername("jordan")  ->  "Valid"
+// TEST 2:  validUsername("jo")      ->  "Invalid"
+// TEST 3:  validUsername("a")       ->  "Invalid"
+
+// ----- 8. Area code -----
+// Write `areaCode(phone)` (10-char string) that RETURNS the first 3 chars.
+// your code here
+function areaCode(phone) {
+  return phone.slice(0, 3);
+}
+console.log("-----5-8-------");
+
+console.log(areaCode("5551234567"));
+console.log(areaCode("2129998888"));
+console.log(areaCode("0000000000"));
+
+// TEST 1:  areaCode("5551234567")  ->  "555"
+// TEST 2:  areaCode("2129998888")  ->  "212"
+// TEST 3:  areaCode("0000000000")  ->  "000"
+
+// ----- 9. Same word ignoring case -----
+// Write `sameWord(a, b)` that RETURNS true when a and b match ignoring case.
+// your code here
+function sameWord(a, b) {
+  return a.toUpperCase() === b.toUpperCase();
+}
+console.log("----5-9-----");
+
+console.log(sameWord("hello", "hello"));
+
+console.log(sameWord("cat", "dog"));
+console.log(sameWord("ABS", "abs"));
+
+// console.log(sameWord("Hello", "hello"));
+// TEST 1:  sameWord("Hello", "hello")  ->  true
+// TEST 2:  sameWord("cat", "dog")      ->  false
+// TEST 3:  sameWord("ABC", "abc")      ->  true
+
+// ----- 10. Clean and measure -----
+// Write `cleanLength(raw)` that trims the spaces off both ends and RETURNS
+// the length of what is left.
+// your code here
+function cleanLength(raw) {
+  return raw.length;
+}
+console.log("-----5-10-----");
+
+console.log(cleanLength("hi"));
+console.log(cleanLength("hello"));
+console.log(cleanLength("x"));
+
+// console.log(cleanLength("  hi  "));
+// TEST 1:  cleanLength("  hi  ")      ->  2
+// TEST 2:  cleanLength("  hello   ")  ->  5
+// TEST 3:  cleanLength("x")           ->  1
+
+// ----- 11. Pad the clock -----
+// Write `padClock(minute)` (0-59 number). RETURN a 2-char string, adding a
+// leading "0" when it is a single digit: 5 -> "05", 42 -> "42".
+// your code here
+function padClock(minute) {
+  if (minute < 10) {
+    return "0" + minute;
+  } else {
+    return "" + minute;
+  }
+}
+console.log("-----5-11---");
+
+console.log(padClock(5));
+console.log(padClock(42));
+console.log(padClock("0"));
+console.log(padClock(9));
+
+// console.log(padClock(5));
+// TEST 1:  padClock(5)   ->  "05"
+// TEST 2:  padClock(42)  ->  "42"
+// TEST 3:  padClock(0)   ->  "00"
+
+// ----- 12. Cents to price tag -----
+// Write `priceTag(cents)` (3+ digit whole number). RETURN "$D.CC" where CC
+// is the last 2 digits and D is the rest: 150 -> "$1.50", 905 -> "$9.05".
+// your code here
+function priceTag(Cents) {
+  let dollars = Math.floor(Cents / 100);
+  let rest = Cents % 100;
+  if (rest < 10) {
+    return "$" + dollars + ".0" + rest;
+  } else {
+    return "$" + dollars + "." + rest;
+  }
+}
+console.log("-----5--11-----");
+
+console.log(priceTag(150));
+console.log(priceTag(905));
+console.log(priceTag(1299));
+
+// console.log(priceTag(150));
+// TEST 1:  priceTag(150)  ->  "$1.50"
+// TEST 2:  priceTag(905)  ->  "$9.05"
+// TEST 3:  priceTag(1299) ->  "$12.99"
+/* ============================================================
+   LESSON 6 â€” LOOPS: FRESH EXERCISES
+   ------------------------------------------------------------
+   Tools: for / while, % , Math.floor, strings, if. NO arrays.
+   Each function RETURNS its answer (a number, string, or boolean).
+
+   Run:  node 6-loops.js
+   Each exercise: 3 TEST CASES, INPUT -> EXACT RETURN value.
+   ============================================================ */
+
+// ----- 1. Sum to n -----
+// Write `sumTo(n)` that RETURNS 1 + 2 + ... + n.
+// your code here
+function sumTo(n) {
+  let sum = 0;
+
+  for (i = 1; i <= n; i++) sum = sum + i;
+  return sum;
+}
+console.log("-----6--1-----");
+
+console.log(sumTo(5));
+console.log(sumTo(1));
+console.log(sumTo(10));
+
+// console.log(sumTo(5));
+// TEST 1:  sumTo(5)    ->  15
+// TEST 2:  sumTo(1)    ->  1
+// TEST 3:  sumTo(10)   ->  55
+
+// ----- 2. Count multiples of 4 -----
+// Write `countFours(max)` that RETURNS how many numbers 1..max divide by 4.
+// your code here
+function countFours(max) {
+  let count = 0;
+  for (i = 1; i <= max; i++) {
+    if (i % 4 === 0) {
+      count = count + 1;
+    }
+  }
+  return count;
+}
+console.log("-----6-2------");
+
+console.log(countFours(20));
+console.log(countFours(7));
+console.log(countFours(3));
+
+// console.log(countFours(20));
+// TEST 1:  countFours(20)  ->  5
+// TEST 2:  countFours(7)   ->  1
+// TEST 3:  countFours(3)   ->  0
+
+// ----- 3. Factorial -----
+// Write `factorial(n)` that RETURNS 1 * 2 * ... * n.
+// your code here
+function factorial(n) {
+  let product = 1;
+  for (i = 1; i <= n; i++) {
+    product = product * i;
+  }
+  return product;
+}
+console.log("-----6--3------");
+
+console.log(factorial(5));
+console.log(factorial(3));
+console.log(factorial(1));
+
+// console.log(factorial(5));
+// TEST 1:  factorial(5)  ->  120
+// TEST 2:  factorial(3)  ->  6
+// TEST 3:  factorial(1)  ->  1
+
+// ----- 4. Power without ** -----
+// Write `power(base, exp)` that RETURNS base multiplied by itself exp times,
+// using a loop. (power(2,3) = 8.) exp is 0 or more; exp 0 -> 1.
+// your code here
+function power(base, exp) {
+  let result = 1;
+  for (let i = 1; i <= exp; i++) {
+    result = result * base;
+  }
+  return result;
+}
+console.log("-----6-4-----");
+
+console.log(power(2, 3));
+console.log(power(5, 2));
+console.log(power(7, 0));
+
+// console.log(power(2, 3));
+// TEST 1:  power(2, 3)   ->  8
+// TEST 2:  power(5, 2)   ->  25
+// TEST 3:  power(7, 0)   ->  1
+
+// ----- 5. Count the digits -----
+// Write `digitCount(n)` (n >= 0) that RETURNS how many digits n has,
+// using Math.floor(n / 10) in a loop.
+// your code here
+function digitCount(n) {
+  if (n === 0) {
+    return 1;
+  }
+  let count = 0;
+  while (n > 0) {
+    n = Math.floor(n / 10);
+    count++;
+  }
+  return count;
+}
+console.log("----6--5------");
+
+console.log(digitCount(7384));
+console.log(digitCount(50));
+console.log(digitCount(0));
+
+// console.log(digitCount(7384));
+// TEST 1:  digitCount(7384)  ->  4
+// TEST 2:  digitCount(50)    ->  2
+// TEST 3:  digitCount(0)     ->  1
+
+// ----- 6. Sum of digits -----
+// Write `digitSum(n)` that RETURNS the sum of n's digits.
+// your code here
+function digitSum(n) {
+  let sum = 0;
+  while (n > 0) {
+    sum = sum + (n % 10);
+    n = Math.floor(n / 10);
+  }
+  return sum;
+}
+console.log("----6-6------");
+
+console.log(digitSum(1234));
+console.log(digitSum(999));
+console.log(digitSum(5));
+
+// console.log(digitSum(1234));
+// TEST 1:  digitSum(1234)  ->  10
+// TEST 2:  digitSum(999)   ->  27
+// TEST 3:  digitSum(5)     ->  5
+
+// ----- 7. Count a letter -----
+// Write `countLetter(text, letter)` that RETURNS how many times letter
+// appears in text.
+// your code here
+function countLetter(text, letter) {
+  let count = 0;
+  for (i = 0; i < text.length; i++)
+    if (text[i] === letter) {
+      count++;
+    }
+  return count;
+}
+console.log("----6-7-----");
+
+console.log(countLetter("banana", "a"));
+console.log(countLetter("hello", "l"));
+console.log(countLetter("dog", "z"));
+
+// console.log(countLetter("banana", "a"));
+// TEST 1:  countLetter("banana", "a")  ->  3
+// TEST 2:  countLetter("hello", "l")   ->  2
+// TEST 3:  countLetter("dog", "z")     ->  0
+
+// ----- 8. Reverse a string -----
+// Write `reverse(text)` that RETURNS text backwards, building it in a loop.
+// your code here
+function reverse(text) {
+  let result = "";
+  for (i = text.length - 1; i >= 0; i--) {
+    result = result + text[i];
+  }
+  return result;
+}
+console.log("------6--8------");
+
+console.log(reverse("code"));
+console.log(reverse("abc"));
+console.log(reverse("x"));
+
+// console.log(reverse("code"));
+// TEST 1:  reverse("code")  ->  "edoc"
+// TEST 2:  reverse("abc")   ->  "cba"
+// TEST 3:  reverse("x")     ->  "x"
+
+// ----- 9. Count vowels -----
+// Write `countVowels(text)` that RETURNS how many vowels (a,e,i,o,u) are in text.
+// your code here
+function countVowels(text) {
+  let count = 0;
+  for (i = 0; i < text.length; i++) {
+    if ("aeiou".includes(text[i])) {
+      count++;
+    }
+  }
+  return count;
+}
+
+console.log("-----6--9------");
+
+console.log(countVowels("javascript"));
+console.log(countVowels("aeiou"));
+console.log(countVowels("zyz"));
+
+// console.log(countVowels("javascript"));
+// TEST 1:  countVowels("javascript")  ->  3
+// TEST 2:  countVowels("aeiou")       ->  5
+// TEST 3:  countVowels("xyz")         ->  0
+
+// ----- 10. Is it prime? -----
+// Write `isPrime(n)` (n >= 2) that RETURNS true when n has no divisor
+// between 2 and n-1.
+// your code here
+function isPrime(n) {
+  for (i = 2; i < n; i++) {
+    if (n % i === 0) return false;
+  }
+  return true;
+}
+console.log("-----6-10-----");
+
+console.log(isPrime(13));
+console.log(isPrime(15));
+console.log(isPrime(2));
+// console.log(isPrime(13));
+// TEST 1:  isPrime(13)  ->  true
+// TEST 2:  isPrime(15)  ->  false
+// TEST 3:  isPrime(2)   ->  true
+
+// ----- 11. Steps to zero -----
+// Write `stepsToZero(n)`. While n > 0: if even, halve it; if odd, subtract 1.
+// RETURN the number of steps to reach 0.
+// your code here
+function stepsToZero(n) {
+  let steps = 0;
+  while (n > 0) {
+    if (n % 2 === 0) {
+      n = n / 2;
+    } else {
+      n = n - 1;
+    }
+    steps++;
+  }
+  return steps;
+}
+console.log("-----6--11----");
+
+console.log(stepsToZero(14));
+console.log(stepsToZero(8));
+console.log(stepsToZero(1));
+
+// console.log(stepsToZero(14));
+// TEST 1:  stepsToZero(14)  ->  6
+// TEST 2:  stepsToZero(8)   ->  4
+// TEST 3:  stepsToZero(1)   ->  1
+
+// ----- 12. Number palindrome -----
+// Write `isNumPalindrome(n)` (n >= 0) that RETURNS true when n reads the same
+// forwards and backwards. Build the reverse with a loop, then compare.
+// your code here
+function isNumPalindrome(n) {
+  let orignal = n;
+  let reverse = 0;
+  while (n > 0) {
+    let digit = n % 10;
+    reverse = reverse * 10 + digit;
+    n = Math.floor(n / 10);
+  }
+  return orignal === reverse;
+}
+// console.log(isNumPalindrome(121));
+// TEST 1:  isNumPalindrome(121)  ->  true
+// TEST 2:  isNumPalindrome(123)  ->  false
+// TEST 3:  isNumPalindrome(7)    ->  true
